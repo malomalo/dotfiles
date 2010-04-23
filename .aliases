@@ -1,0 +1,16 @@
+alias ..='cd ..'
+alias ls='ls -ahGF'
+alias lr='ls -lhR'
+alias ll='ls -lhaG'
+alias grep='grep --color=auto'
+alias mkdir='mkdir -p'
+alias vi='vim'
+
+# Git
+alias g='git'
+alias gitx='gitx --all'
+
+# Tarsnap
+alias tc='tarsnap --keyfile ~/.tarsnap/key --cachedir ~/.tarsnap/cache --humanize-numbers --checkpoint-bytes 5000000 --maxbw-rate 30000 -c'
+alias td='tarsnap --keyfile ~/.tarsnap/key --cachedir ~/.tarsnap/cache --humanize-numbers -d'
+alias tl='tarsnap --keyfile ~/.tarsnap/key --list-archives --humanize-numbers'

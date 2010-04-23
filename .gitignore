@@ -1,1 +1,13 @@
 .DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
+*.swo
+*~
+*.swk
+*.swl
+*.swm
+*.swn
+*.#*
+*#*
