@@ -5,6 +5,7 @@ alias ll='ls -lhaG'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
 alias vi='vim'
+alias untar='tar -xvf'
 
 # Git
 alias g='git'
