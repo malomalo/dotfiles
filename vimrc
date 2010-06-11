@@ -1,0 +1,52 @@
+" Basics {
+	set nocompatible " explicitly get out of vi-compatible mode
+	set noexrc " don't use local version of .(g)vimrc, .exrc
+	syntax on " syntax highlighting on
+" }
+
+" General {
+	set backup " make backup files
+	set backupdir=~/.vim/backup " where to put backup files
+	set directory=~/.vim/tmp " directory to place swap files in
+	set mouse=a " use mouse everywhere
+	set noerrorbells " don't make noise
+" }
+
+" Vim UI {
+    " colorscheme ir_black
+    " set background=dark
+	set number " turn on line numbers
+	set numberwidth=3 " 3 cols for numbers
+    highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkGreen gui=NONE guifg=DarkGrey guibg=NONE
+	set ruler " always show current positions along the bottom
+" }
+
+" Text Formatting/Layout {
+    set ignorecase " case insensitive by default
+    set nowrap " do not wrap lines
+    set smartcase " if there are caps, go case-sensitive
+" }
+
+" Tab Settings {
+    if has("autocmd")
+        filetype on " Enable file type detection
+       
+        " Sysntax of these languages is fussy over tabs/whitespace
+        autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+        autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+         
+        " Styles for certain languages
+        autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+    endif
+" }
+
+" Buffers {
+    set hidden " allow to switch buffers without saving
+" }
+
+" Window Managemnet {
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+" }
