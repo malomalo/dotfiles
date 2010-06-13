@@ -1,5 +1,6 @@
 [core]
-#	autocrlf = input
+	autocrlf = input
+	excludesfile = <%= ENV['HOME'] %>/.gitignore
 [user]
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
@@ -9,7 +10,7 @@
 	st = status
 	cl = clone
 	b = branch
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	cp = cherry-pick
 [apply]
 	whitespace = nowarn
@@ -20,5 +21,3 @@
 [github]
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
-[core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
