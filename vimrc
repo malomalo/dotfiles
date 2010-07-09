@@ -1,14 +1,32 @@
+" Training Wheels {
+	inoremap <Left>  <NOP>
+	inoremap <Right> <NOP>
+	inoremap <Up>	 <NOP>
+	inoremap <Down>  <NOP>
+" }
+
 " Basics {
 	set nocompatible " explicitly get out of vi-compatible mode
+	set cf
+	set ffs=unix,dos,mac
+	set modeline
+	set autoread
 	set noexrc " don't use local version of .(g)vimrc, .exrc
 	syntax on " syntax highlighting on
 " }
 
+" Searching {
+	set hlsearch
+	set wrapscan
+	set incsearch
+" }
+
 " General {
+	set autoindent
 	set backup " make backup files
 	set backupdir=~/.vim/backup " where to put backup files
 	set directory=~/.vim/tmp " directory to place swap files in
-	set mouse=a " use mouse everywhere
+	set mouse=r " use mouse everywhere
 	set noerrorbells " don't make noise
 " }
 
