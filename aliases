@@ -7,6 +7,7 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
 alias vi='vim'
 alias untar='tar -xvf'
+alias r='cd ~/code/redistogo'
 
 # Git
 alias g='git'
