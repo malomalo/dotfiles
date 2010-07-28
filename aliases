@@ -1,17 +1,27 @@
 alias ..='cd ..'
-alias ls='ls -hGF'
-alias la='ls -ahGF'
-alias lr='ls -lhR'
-alias ll='ls -lhaG'
+alias ls='ls -hGF --color=auto'
+alias la='ls -ahGF --color=auto'
+alias lr='ls -lhR --color=auto'
+alias ll='ls -lhaG --color=auto'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
 alias vi='vim'
 alias untar='tar -xvf'
+alias diff='colordiff'
+alias df='df -h'
+alias du='du -c -h'
+alias ping='ping -c 5'
 alias r='cd ~/code/redistogo'
 
 # Git
 alias g='git'
 alias gitx='gitx --all'
+
+# privileged access
+if [ $UID -ne 0 ]; then
+	alias reboot='sudo reboot'
+	alias halt='sudo halt'
+fi
 
 # Tarsnap
 alias tc='tarsnap --keyfile ~/.tarsnap/key --cachedir ~/.tarsnap/cache --humanize-numbers --checkpoint-bytes 5000000 --maxbw-rate 30000 -c'
