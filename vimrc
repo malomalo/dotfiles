@@ -35,9 +35,17 @@
     " set background=dark
 	set number " turn on line numbers
 	set numberwidth=3 " 3 cols for numbers
-    highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkGreen gui=NONE guifg=DarkGrey guibg=NONE
+    	highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkGreen gui=NONE guifg=DarkGrey guibg=NONE
 	set ruler " always show current positions along the bottom
+	set noshowcmd
+	set backspace=2
+	set wildmenu
+	set wildmode=list:longest,full
 " }
+
+" Visual Cues {
+	set showmatch
+	set mat=5
 
 " Text Formatting/Layout {
     set ignorecase " case insensitive by default
