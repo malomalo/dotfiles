@@ -26,7 +26,7 @@
 	set backup " make backup files
 	set backupdir=~/.vim/backup " where to put backup files
 	set directory=~/.vim/tmp " directory to place swap files in
-	set mouse=r " use mouse everywhere
+"	set mouse=r " use mouse everywhere
 	set noerrorbells " don't make noise
 " }
 
