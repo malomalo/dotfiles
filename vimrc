@@ -63,8 +63,6 @@ set nocompatible " explicitly get out of vi-compatible mode
 	set ignorecase " case insensitive by default
 	set smartcase " if there are caps, go case-sensitive
 
-	nnoremap / /\v
-	vnoremap / /\v
 	set gdefault " applly substitutions globally on lines
 " }
 
