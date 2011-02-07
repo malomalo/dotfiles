@@ -24,7 +24,8 @@ set nocompatible " explicitly get out of vi-compatible mode
 	set nobackup " make backup files
 	set backupdir=~/.vim/backup " where to put backup files
 	set noswapfile
-	set undofile
+	set undodir=~/.vim/tmp
+    set noundofile
 " }
 
 " Buffers {
@@ -40,6 +41,8 @@ set nocompatible " explicitly get out of vi-compatible mode
 " }
 
 " Key Remapings {
+    set timeoutlen=500
+
     "" hitting tab key match braket pairs
 	nnoremap <tab> %
 	vnoremap <tab> %
@@ -49,6 +52,9 @@ set nocompatible " explicitly get out of vi-compatible mode
 
     " no shift-; to get to command mode, just ;
 	nnoremap ; :
+
+	" ctrl ctrl to hit escape
+	inoremap ii <Esc>l
 " }
 
 " Short Cuts {
@@ -72,7 +78,6 @@ set nocompatible " explicitly get out of vi-compatible mode
 " }
 
 " Vim UI {
-	set cursorline
 	set relativenumber
 	set number " turn on line numbers
 	set numberwidth=3 " 3 cols for numbers
@@ -90,7 +95,8 @@ set nocompatible " explicitly get out of vi-compatible mode
     syntax on " syntax highlighting on
     " colorscheme ir_black
     " set background=[dark|light]
-"	colorscheme "Mustang"
+    set background=dark
+	colorscheme mustang
 	set showmatch " show matching parenthesis
 " }
 
@@ -114,6 +120,7 @@ set nocompatible " explicitly get out of vi-compatible mode
 		filetype on " Enable file type detection
 		filetype indent on
 		filetype plugin on
+		filetype plugin indent on
 
 		" Sysntax of these languages is fussy over tabs/whitespace
 		autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
