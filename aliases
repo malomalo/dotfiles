@@ -13,10 +13,16 @@ alias df='df -h'
 alias du='du -c -h'
 alias ping='ping -c 5'
 alias r='cd ~/code/redistogo'
+alias utime='date +%s'
+alias epoch='date +%s'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Git
 alias g='git'
 alias gitx='gitx --all'
+
+# Heroku
+alias h='heroku'
 
 # privileged access
 if [ $UID -ne 0 ]; then
@@ -24,7 +30,17 @@ if [ $UID -ne 0 ]; then
 	alias halt='sudo halt'
 fi
 
-# Tarsnap
-alias tc='tarsnap --keyfile ~/.tarsnap/key --cachedir ~/.tarsnap/cache --humanize-numbers --checkpoint-bytes 5000000 --maxbw-rate 30000 -c'
-alias td='tarsnap --keyfile ~/.tarsnap/key --cachedir ~/.tarsnap/cache --humanize-numbers -d'
-alias tl='tarsnap --keyfile ~/.tarsnap/key --list-archives --humanize-numbers'
+# starting and stopping postgres
+# If this is your first install, automatically load on login with:
+#     cp /usr/local/Cellar/postgresql/9.0.1/org.postgresql.postgres.plist ~/Library/LaunchAgents
+#     launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+# 
+# Or start manually with:
+#     pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+# 
+# And stop with:
+#     pg_ctl -D /usr/local/var/postgres stop -s -m fast
+# 
+# If you want to install the postgres gem, including ARCHFLAGS is recommended:
+#     env ARCHFLAGS="-arch x86_64" gem install pg
+# 
