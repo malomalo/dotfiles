@@ -1,7 +1,6 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'pp'
-require 'rubygems'
 require 'wirble'
 
 ARGV.concat ['--readline']
@@ -25,7 +24,7 @@ class Wirble::History
   end
 end
 
-if Rails.env
+if defined?(Rails)
   rails_root = File.basename(Dir.pwd)
   env = case Rails.env
         when 'development'; 'DEV'
