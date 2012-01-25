@@ -13,6 +13,7 @@ alias du='du -c -h'
 alias ping='ping -c 5'
 alias utime='date +%s'
 alias epoch='date +%s'
+alias be='bundle exec'
 
 # Git
 alias g='git'

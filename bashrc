@@ -30,14 +30,18 @@ prompt_command () {
 
     PS1="${p} ${w}$ "
 }
-PROMPT_COMMAND=prompt_command
+#PROMPT_COMMAND=prompt_command
 
 # OLD PS1
-# if [ "$USER" == "root" ];then
-#   PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\] '
-# else
-#   PS1='[\[\e[0;32m\]\u\[\e[0m\]@ \[\e[0;32m\]\W\[\e[0m\]]$ '
-# fi
+ if [ "$USER" == "root" ];then
+   PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\] '
+ else
+   PS1='[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\h\[\e[0m\] \[\e[0;32m\]\W\[\e[0m\]]$ '
+ fi
 
-export PATH=/usr/local/Cellar/ruby/1.9.2-p290/bin:$PATH:/usr/local/sbin
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+#export PATH=/usr/local/Cellar/ruby/1.9.2-p290/bin:$PATH:/usr/local/sbin
+export PATH=/usr/local/Cellar/ruby/1.9.3-p0/bin:$PATH:/usr/local/sbin
+export EDITOR=vim
+
+# For Node.js
+export PATH=$PATH:/usr/local/lib/node_modules

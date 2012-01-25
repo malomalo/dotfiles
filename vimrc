@@ -5,6 +5,12 @@ set nocompatible " explicitly get out of vi-compatible mode
   call pathogen#runtime_append_all_bundles()
 " }
 
+" Mvim specifics {
+    if has("gui_running")
+        set guioptions=egmrt
+    endif
+" }
+
 " Basics {
   let mapleader=","
   set title " change the terminals title
@@ -13,6 +19,10 @@ set nocompatible " explicitly get out of vi-compatible mode
   set modeline
   set autoread
   set noexrc " don't use local version of .(g)vimrc, .exrc
+" }
+
+" Fold {
+    set foldlevel=5
 " }
 
 " Backup and Swap files {
@@ -38,7 +48,7 @@ set nocompatible " explicitly get out of vi-compatible mode
 
 " Tab Completion {
     set wildmode=list:longest,list:full
-    set wildignore+=*.o,*.obj,.git,*.rbc,*.swp,*.bak,*.pyc,*.class,.svn,devscripts/**,library/**,common/**,public/emp_image
+    set wildignore+=*.o,*.obj,.git,*.rbc,*.swp,*.bak,*.pyc,*.class,.svn,devscripts/**,library/**,common/**,tmp/**
 " }    
 
 " Plugins {
@@ -175,10 +185,12 @@ set nocompatible " explicitly get out of vi-compatible mode
         filetype on " Enable file type detection
         filetype plugin indent on
 
+
         " Sysntax of these languages is fussy over tabs/whitespace
         autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
         autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         autocmd FileType haml setlocal ts=2 sts=2 sw=2 expandtab
+        autocmd FileType ledger setlocal ts=4 sts=4 sw=4 noexpandtab
         autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
         " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
         au FileType python  set tabstop=4 textwidth=79
@@ -194,6 +206,7 @@ set nocompatible " explicitly get out of vi-compatible mode
         au BufRead,BufNewFile *.txt call s:setupWrapping()
         au BufRead,BufNewFile * call s:setupFO()
         
+        au BufNewFile,BufRead *.ldg,*.ledger setf ledger
     endif
 " }
 
@@ -208,3 +221,4 @@ set nocompatible " explicitly get out of vi-compatible mode
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
+

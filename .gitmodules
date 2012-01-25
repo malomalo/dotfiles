@@ -4,6 +4,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "vim/bundle/ledger"]
-	path = vim/bundle/ledger
-	url = https://github.com/cypok/vim-ledger.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
