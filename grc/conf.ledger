@@ -1,0 +1,8 @@
+regexp=\d{4}\/\d{2}\/\d{2}
+colours=cyan
+======
+regexp=\$[\d,\.]+
+colours=green
+======
+regexp=\$-[\d,\.]+
+colours=yellow

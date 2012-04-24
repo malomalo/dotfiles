@@ -18,7 +18,6 @@ set nocompatible " explicitly get out of vi-compatible mode
   set ffs=unix,dos,mac
   set modeline
   set autoread
-  set noexrc " don't use local version of .(g)vimrc, .exrc
 " }
 
 " Fold {
@@ -68,10 +67,6 @@ set nocompatible " explicitly get out of vi-compatible mode
     " Bubble multiple lines
     vmap <C-Up> [egv
     vmap <C-Down> ]egv
-
-    " NERDTree configuration
-    let NERDTreeIgnore=['\.rbc$', '\~$','.class','.pyc']
-    map <Leader>n :NERDTreeToggle<CR>
 " }
 
 " Key Remapings {
@@ -145,12 +140,11 @@ set nocompatible " explicitly get out of vi-compatible mode
 " Color Scheming {
     syntax on " syntax highlighting on
     " set background=[dark|light]
-    colorscheme rdark
-    set showmatch " show matching parenthesis
+"    colorscheme rdark
 " }
 
 " Visual Cues {
-  set showmatch
+  set showmatch " show matching parenthesis
   set mat=5
 
 " Text Formatting/Layout {
@@ -192,8 +186,7 @@ set nocompatible " explicitly get out of vi-compatible mode
         autocmd FileType haml setlocal ts=2 sts=2 sw=2 expandtab
         autocmd FileType ledger setlocal ts=4 sts=4 sw=4 noexpandtab
         autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
-        " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-        au FileType python  set tabstop=4 textwidth=79
+        autocmd FileType python  set tabstop=4 textwidth=79
 
         " Styles for certain languages
         autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
@@ -210,8 +203,6 @@ set nocompatible " explicitly get out of vi-compatible mode
     endif
 " }
 
-
-
 " Window Managemnet {
     map <C-h> <C-w>h
     map <C-j> <C-w>j
@@ -221,4 +212,3 @@ set nocompatible " explicitly get out of vi-compatible mode
 
 " MacVIM shift+arrow-keys behavior (required in .vimrc)
 let macvim_hig_shift_movement = 1
-

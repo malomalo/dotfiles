@@ -30,6 +30,8 @@ task :install do
       link_file(file)
     end
   end
+  `git submodule init`
+  `git submodule update`
 end
 
 def replace_file(file)
