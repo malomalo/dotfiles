@@ -140,7 +140,8 @@ set nocompatible " explicitly get out of vi-compatible mode
 " Color Scheming {
     syntax on " syntax highlighting on
     " set background=[dark|light]
-"    colorscheme rdark
+    colorscheme custom "rdark
+    set showmatch " show matching parenthesis
 " }
 
 " Visual Cues {
