@@ -9,8 +9,13 @@ source "/usr/local/etc/grc.bashrc"
 alias bal='colourify -c ~/.grc/conf.bal /usr/local/bin/bal'
 alias reg='colourify -c ~/.grc/conf.reg /usr/local/bin/reg'
 
-export PATH=~/.bin:/usr/local/bin:/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/bin:$PATH:/usr/local/sbin
+USER_BIN=~/.bin
+RUBY_BIN=/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/bin
+POSTGRES_BIN=/Applications/Postgres.app/Contents/MacOS/bin
+export PATH=$USER_BIN:$POSTGRES_BIN:$RUBY_BIN:/usr/local/bin:$PATH:/usr/local/sbin
+
 export EDITOR=/usr/bin/vim
+export NODE_PATH=/usr/local/lib/node_modules
 
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
