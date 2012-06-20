@@ -2,13 +2,14 @@
 source ~/.aliases
 
 # Git Autocompletion
-source "`brew --prefix git`/etc/bash_completion.d/git-completion.bash" 
+source "/usr/local/etc/bash_completion.d/git-completion.bash" 
 
 # GRC
-source "`brew --prefix grc`/etc/grc.bashrc"
-alias ledger='colourify -c ~/.grc/conf.ledger ledger'
+source "/usr/local/etc/grc.bashrc"
+alias bal='colourify -c ~/.grc/conf.bal /usr/local/bin/bal'
+alias reg='colourify -c ~/.grc/conf.reg /usr/local/bin/reg'
 
-export PATH=/usr/local/bin:/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH:/usr/local/sbin
+export PATH=~/.bin:/usr/local/bin:/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/bin:$PATH:/usr/local/sbin
 export EDITOR=/usr/bin/vim
 
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false

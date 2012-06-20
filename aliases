@@ -14,6 +14,7 @@ alias ping='ping -c 5'
 alias utime='date +%s'
 alias epoch='date +%s'
 alias be='bundle exec'
+alias utc='date -u'
 
 # Git
 alias g='git'

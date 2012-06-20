@@ -198,6 +198,7 @@ set nocompatible " explicitly get out of vi-compatible mode
         " md, markdown, and mk are markdown and define buffer-local preview
         au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
         au BufRead,BufNewFile *.txt call s:setupWrapping()
+        au BufRead,BufNewFile *.jst set syntax=jst
         au BufRead,BufNewFile * call s:setupFO()
         
         au BufNewFile,BufRead *.ldg,*.ledger setf ledger
