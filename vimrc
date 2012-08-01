@@ -124,6 +124,7 @@ set nocompatible " explicitly get out of vi-compatible mode
 " General {
   set noerrorbells " don't make noise
   set visualbell
+  noremap <F1> <Esc> " f1 no longer brings up help
 " }
 
 " Vim UI {
@@ -140,7 +141,7 @@ set nocompatible " explicitly get out of vi-compatible mode
 " Color Scheming {
     syntax on " syntax highlighting on
     " set background=[dark|light]
-    colorscheme custom "rdark
+    colorscheme custom "solarized rdark
     set showmatch " show matching parenthesis
 " }
 
@@ -203,6 +204,8 @@ set nocompatible " explicitly get out of vi-compatible mode
         au BufRead,BufNewFile * call s:setupFO()
         
         au BufNewFile,BufRead *.ldg,*.ledger setf ledger
+
+        au BufWritePost .vimrc so ~/.vimrc " auto reload vimrc when it's saved
     endif
 " }
 
