@@ -6,8 +6,8 @@ source "/usr/local/etc/bash_completion.d/git-completion.bash"
 
 # GRC
 source "/usr/local/etc/grc.bashrc"
-alias bal='colourify -c ~/.grc/conf.bal /usr/local/bin/bal'
-alias reg='colourify -c ~/.grc/conf.reg /usr/local/bin/reg'
+alias bal='colourify -c ~/.grc/conf.bal ~/.bin/bal'
+alias reg='colourify -c ~/.grc/conf.reg ~/.bin/reg'
 
 USER_BIN=~/.bin
 RUBY_BIN=/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/bin

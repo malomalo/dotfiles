@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/jon/code/dotfiles'
 let g:netrw_dirhist_2='/Users/jon/code/spire'
 let g:netrw_dirhist_3='/Users/jon/code/dotfiles'
 let g:netrw_dirhist_4='/Users/jon'
 let g:netrw_dirhist_5='/Users'
+let g:netrw_dirhist_6='/Users/jon/code/mls-gem'
+let g:netrw_dirhist_7='/Users/jon/code/mls-gem/lib'
+let g:netrw_dirhist_8='/Users/jon/code/mls-gem/lib/mls'
