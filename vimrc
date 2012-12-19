@@ -30,6 +30,7 @@ set nocompatible " explicitly get out of vi-compatible mode
   set undodir=~/.vim/tmp
   set noswapfile
   set nobackup
+  set nowritebackup
   set noundofile
 " }
 
@@ -141,7 +142,7 @@ set nocompatible " explicitly get out of vi-compatible mode
 " Color Scheming {
     syntax on " syntax highlighting on
     " set background=[dark|light]
-    colorscheme custom "solarized rdark
+    colorscheme tomorrow "custom solarized rdark
     set showmatch " show matching parenthesis
 " }
 

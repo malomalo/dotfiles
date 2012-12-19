@@ -23,6 +23,7 @@ alias gitx='gitx --all'
 # Heroku
 alias h='heroku'
 alias console='heroku run console'
+alias logs='heroku logs --tail'
 
 # privileged access
 if [ $UID -ne 0 ]; then

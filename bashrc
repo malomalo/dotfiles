@@ -28,5 +28,6 @@ else
     PS1='[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\h\[\e[0m\] \[\e[0;32m\]\W\[\e[0m\]]$ '
 fi
 
-# For Node.js
-export PATH=$PATH:/usr/local/lib/node_modules
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
