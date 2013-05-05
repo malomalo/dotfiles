@@ -20,11 +20,6 @@ alias utc='date -u'
 alias g='git'
 alias gitx='gitx --all'
 
-# Heroku
-alias h='heroku'
-alias console='heroku run console'
-alias logs='heroku logs --tail'
-
 # privileged access
 if [ $UID -ne 0 ]; then
 	alias reboot='sudo reboot'

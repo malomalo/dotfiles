@@ -11,8 +11,8 @@ alias reg='colourify -c ~/.grc/conf.reg ~/.bin/reg'
 
 USER_BIN=~/.bin
 RUBY_BIN=/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/bin
-POSTGRES_BIN=/Applications/Postgres.app/Contents/MacOS/bin
-export PATH=$USER_BIN:$POSTGRES_BIN:$RUBY_BIN:/usr/local/bin:$PATH:/usr/local/sbin
+NPM_BIN=/usr/local/share/npm/bin
+export PATH=$USER_BIN:$POSTGRES_BIN:$RUBY_BIN:$NPM_BIN:/usr/local/bin:$PATH:/usr/local/sbin
 
 export EDITOR=/usr/bin/vim
 export NODE_PATH=/usr/local/lib/node_modules
