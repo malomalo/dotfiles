@@ -15,7 +15,7 @@ GEM_BIN=/usr/local/opt/ruby/bin
 NPM_BIN=/usr/local/share/npm/bin
 
 export PATH=$USER_BIN:$GEM_BIN:$NPM_BIN:$BREW_BIN:$PATH
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 # OLD PS1
 if [ "$USER" == "root" ];then

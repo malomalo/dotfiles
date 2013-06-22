@@ -7,17 +7,22 @@ This is how I like to roll.
 
       export HOST=#{HOST}
 
+      # install Xcode
+
+      ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+      brew doctor
+      brew install git
+
       ssh-keygen -t rsa -C "malomalo@$HOST"
+      # Copy to github
 
       git clone git://github.com/malomalo/dotfiles.git ~/.dotfiles
       cd ~/.dotfiles
       rake install
       . osx
 
-      ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-      brew doctor
       brew install wget --enable-iri
-      brew install bash bash-completion git grc ruby nodejs postgres \
+      brew install bash bash-completion vim grc ruby nodejs postgres \
                    postgis imagemagick poppler ghostscript redis
       
       # Initialize Postgres
