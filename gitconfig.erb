@@ -1,9 +1,20 @@
 [core]
 	autocrlf = input
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
+	excludesfile = ~/.gitignore
+    whitespace = trailing-space
 [user]
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+[apply]
+	whitespace = fix
+[diff]
+	color = auto
+[status]
+	color = auto
+[merge]
+    log = true
+[push]
+    default = matching
 [alias]
 	ci = commit
 	co = checkout
@@ -12,9 +23,3 @@
 	b = branch
 	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	cp = cherry-pick
-[apply]
-	whitespace = nowarn
-[diff]
-	color = auto
-[status]
-	color = auto
