@@ -16,7 +16,7 @@ This is how I like to roll.
       ssh-keygen -t rsa -C "malomalo@$HOST"
       # Copy to github
 
-      git clone git://github.com/malomalo/dotfiles.git ~/.dotfiles
+      git clone git@github.com:malomalo/dotfiles.git ~/.dotfiles
       cd ~/.dotfiles
       rake install
       . osx
