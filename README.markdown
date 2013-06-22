@@ -16,7 +16,8 @@ This is how I like to roll.
 
       ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
       brew doctor
-      brew install bash-completion git grc ruby nodejs postgres \
+      brew install wget --enable-iri
+      brew install bash bash-completion git grc ruby nodejs postgres \
                    postgis imagemagick poppler ghostscript redis
       
       # Initialize Postgres
