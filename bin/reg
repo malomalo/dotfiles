@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/local/bin/ledger -f $1 -n reg ${*:2}
+/usr/local/bin/ledger -f $1 -n reg "${*:2}"

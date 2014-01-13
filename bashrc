@@ -10,7 +10,7 @@ alias bal='colourify -c ~/.grc/conf.bal ~/.bin/bal'
 alias reg='colourify -c ~/.grc/conf.reg ~/.bin/reg'
 
 USER_BIN=~/.bin
-BREW_BIN=/usr/local/bin/:/usr/local/sbin
+BREW_BIN=/usr/local/bin:/usr/local/sbin
 GEM_BIN=/usr/local/opt/ruby/bin
 NPM_BIN=/usr/local/share/npm/bin
 
@@ -23,3 +23,6 @@ if [ "$USER" == "root" ];then
 else
     PS1='[\[\e[0;32m\]\u\[\e[0m\]@\[\e[0;34m\]\h\[\e[0m\] \[\e[0;32m\]\W\[\e[0m\]]$ '
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -28,3 +28,5 @@ fi
 alias r='cd ~/code/redistogo'
 
 alias ez='wget --user=malomalo -c --ask-password '
+
+alias mls='cd ~/code/mls'
