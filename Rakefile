@@ -29,7 +29,7 @@ task :install => [:dependencies, :config] do
   replace_all = false
   
   Dir['*'].each do |file|
-    next if %w[backgrounds terminal textmate README.markdown Rakefile osx].include? file
+    next if %w[terminal textmate README.markdown Rakefile osx].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
