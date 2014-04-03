@@ -1,0 +1,6 @@
+encoding    = UTF-8
+softWrap    = false
+windowTitle = "${TM_FILEPATH/(\/[^\/]+){4}\///}"
+
+[ *.jbuilder ]
+fileType    = ruby
