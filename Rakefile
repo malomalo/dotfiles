@@ -1,5 +1,6 @@
 require 'rake'
 require 'erb'
+require 'fileutils'
 
 task "install dependencies"
 task :dependencies do
@@ -17,6 +18,15 @@ task :dependencies do
   
   dependencies.each do |dep|
     system("brew install #{dep}")
+  end
+
+
+  File.mkdir_p('~/.bundle')
+  File.open('~/.bundle/config', 'w') do |file|
+    file.write <<-DATA
+    ---
+    BUNDLE_JOBS: '#{`sysctl -n hw.ncpu`.strip.to_i - 1}'
+    DATA
   end
 end
 
