@@ -13,7 +13,8 @@ task :dependencies do
     'ledger',
     'grc',
     'vim --override-system-vi',
-    'watch'
+    'watch',
+    'ruby'
   ]
   
   dependencies.each do |dep|
