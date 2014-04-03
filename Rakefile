@@ -1,11 +1,31 @@
 require 'rake'
 require 'erb'
 
+task "install dependencies"
+task :dependencies do
+  dependencies = [
+    'bash-completion',
+    'fdupes',
+    'cloc',
+    'wget',
+    'git',
+    'ledger',
+    'grc',
+    'vim --override-system-vi',
+    'watch'
+  ]
+  
+  dependencies.each do |dep|
+    system("brew install #{dep}")
+  end
+end
+
 desc "install the dot files into user's home directory"
-task :install do
+task :install => :dependencies do
   replace_all = false
+  
   Dir['*'].each do |file|
-    next if %w[README.markdown Rakefile backgrounds terminal textmate osx].include? file
+    next if %w[backgrounds terminal textmate README.markdown Rakefile osx].include? file
     
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
