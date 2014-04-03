@@ -22,7 +22,7 @@ task :dependencies do
   end
 
 
-  File.mkdir_p('~/.bundle')
+  FileUtils.mkdir_p('~/.bundle')
   File.open('~/.bundle/config', 'w') do |file|
     file.write <<-DATA
     ---
