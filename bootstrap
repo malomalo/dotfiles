@@ -1,0 +1,52 @@
+echo "Configuring OS X"
+. osx
+
+ssh-kegen -t rsa -C "jonbracy@gmail.com" -N ''
+
+if test ! $(which brew); then
+    echo "Installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Updating homebrew..."
+brew update
+
+brew install git bash bash-completion csshx fdupes grc ledger wget tree watch htop
+
+echo "Installing ruby..."
+brew install ruby
+gem install bundler
+
+echo "Installing node.js..."
+brew install node
+
+echo "Installing Postgres & PostGIS"
+brew install postgres postgis
+
+echo "Installing Memcached & Redis"
+brew install memcached redis
+
+echo "Installing Imaging & PDF Tools"
+brew install imagemagick poppler ghostscript
+
+echo "Installing Applications..."
+brew install caskroom/cask/brew-cask
+
+# No setup needed for these apps
+brew cask install vlc unrarx hipchat firefox
+
+# These app configs are synced with mackup
+brew cask install --appdir="/Applications" textmate flux spotify skype onepassword spectacle
+
+brew cask install google-chrome bleep gitx-rowanj
+
+# gpgtools
+
+
+brew cask install bittorrent-sync dropbox
+echo "BitTorrent Sync & Dropbox installed"
+read -p "Have you configured Sync & Dropbox? (yes to continue)"
+if [ "$REPLY" != "yes" ]; then
+    exit
+fi
+mackup restore
