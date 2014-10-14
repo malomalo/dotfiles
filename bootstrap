@@ -1,44 +1,63 @@
 echo "Configuring OS X"
 . osx
 
-ssh-kegen -t rsa -C "jonbracy@gmail.com" -N ''
+mkdir -p ~/.ssh
+ssh-keygen -t rsa -C "jonbracy@gmail.com" -N ''
 
 if test ! $(which brew); then
     echo "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+brew doctor
+brew install caskroom/cask/brew-cask
+
 echo "Updating homebrew..."
 brew update
 
 brew install git bash bash-completion csshx fdupes grc ledger wget tree watch htop
 
+sudo tee -a /etc/shells > /dev/null << 'EOF'
+/usr/local/bin/bash
+EOF
+
+# Set shell
+
 echo "Installing ruby..."
 brew install ruby
-gem install bundler
+/usr/local/opt/ruby/bin/gem install bundler
 
 echo "Installing node.js..."
 brew install node
 
 echo "Installing Postgres & PostGIS"
 brew install postgres postgis
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
-echo "Installing Memcached & Redis"
-brew install memcached redis
+echo "Installing Memcached"
+brew install memcached
+ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
+
+echo "Installing Redis"
+brew install redis
+ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist
 
 echo "Installing Imaging & PDF Tools"
+brew cask install xquartz
 brew install imagemagick poppler ghostscript
 
 echo "Installing Applications..."
-brew install caskroom/cask/brew-cask
 
 # No setup needed for these apps
-brew cask install vlc unrarx hipchat firefox
+brew cask install --appdir="/Applications" vlc unrarx hipchat firefox
 
 # These app configs are synced with mackup
 brew cask install --appdir="/Applications" textmate flux spotify skype onepassword spectacle
 
-brew cask install google-chrome bleep gitx-rowanj
+brew cask install --appdir="/Applications" google-chrome bleep gitx-rowanj
 
 # gpgtools
 
@@ -49,4 +68,5 @@ read -p "Have you configured Sync & Dropbox? (yes to continue)"
 if [ "$REPLY" != "yes" ]; then
     exit
 fi
+ln -s ~/Sync/.dotfiles/.mackup.cfg ~/.mackup.cfg
 mackup restore
