@@ -55,9 +55,9 @@ echo "Installing Applications..."
 brew cask install --appdir="/Applications" vlc unrarx hipchat firefox
 
 # These app configs are synced with mackup
-brew cask install --appdir="/Applications" textmate flux spotify skype onepassword spectacle
+brew cask install --appdir="/Applications" textmate flux spotify skype onepassword spectacle transmission
 
-brew cask install --appdir="/Applications" google-chrome bleep gitx-rowanj
+brew cask install --appdir="/Applications" google-chrome bleep gitx-rowanj joinme
 
 # gpgtools
 
@@ -69,4 +69,5 @@ if [ "$REPLY" != "yes" ]; then
     exit
 fi
 ln -s ~/Sync/.dotfiles/.mackup.cfg ~/.mackup.cfg
+ln -s ~/Sync/.dotfiles/.mackup ~/.mackup
 mackup restore
